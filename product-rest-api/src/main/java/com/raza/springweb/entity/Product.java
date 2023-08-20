@@ -18,6 +18,12 @@ public class Product {
 		// Auto-generated constructor stub
 	}
 
+	public Product(String name, String description, int price) {
+		this.name = name;
+		this.price = price;
+		this.description = description;
+	}
+
 	public Integer getId() {
 		return id;
 	}
