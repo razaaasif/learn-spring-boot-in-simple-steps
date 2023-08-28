@@ -1,0 +1,1 @@
+2023-08-28 20:09:41.536  INFO 11712 --- [http-nio-8080-exec-8] c.r.s.controller.ProductController       : Finding product by id 5

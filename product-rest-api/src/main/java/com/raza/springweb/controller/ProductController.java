@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +22,7 @@ import com.raza.springweb.repository.ProductRepository;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-
+	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	ProductRepository productRepository;
 
 	public ProductController(ProductRepository productRepository) {
@@ -34,6 +36,7 @@ public class ProductController {
 
 	@GetMapping("{id}")
 	public Product getById(@PathVariable("id") Integer id) {
+		logger.info("Finding product by id " + id);
 		return this.productRepository.findById(id).orElse(null);
 	}
 
